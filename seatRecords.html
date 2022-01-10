@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link  rel="stylesheet" type="text/css" href="addCss.css" >
+        <style>
+        
+        
+    </style>
+    </head>
+<body>
+    <center>
+        <div>
+                <table id="tc" border="1" style="border-collapse:collapse;">
+                    <tr>
+                        <th colspan="5">Seat Records</th>
+                    </tr>
+                    <tr>
+                        <th>Code</th>
+                        <th>Course Name</th>
+                        <th>Total Seat</th>
+                        <th>Booked Seat</th>
+                        <th>Seat Vacancy</th>
+                    </tr>
+                </table>
+        </div>
+</center>
+<script>
+  
+    var data=[];
+    Courses=JSON.parse(localStorage.getItem("sub"));
+    Students=JSON.parse(localStorage.getItem("stud"));
+    var tseat=0;
+    var bseat=0;
+    var table = document.getElementById("tc");
+    for(var course of Courses)
+    {
+       
+        var row=table.insertRow(2);
+        var id=row.insertCell(0);
+        var name1=row.insertCell(1);
+        var total=row.insertCell(2);
+        var booked=row.insertCell(3);
+        var vacancy=row.insertCell(4);
+        id.innerHTML=course.code;
+        name1.innerHTML=course.name;
+        total.innerHTML="31";
+        var totalbook=0;
+        for(var student of Students)
+        {
+            if(student.ccode==course.code)
+            {
+                totalbook++;
+            }
+
+        }
+        booked.innerHTML=totalbook;
+        vacancy.innerHTML=31-totalbook;
+        tseat=tseat+31;
+        bseat=bseat+totalbook;
+    }
+    var row=table.insertRow(table.rows.length);
+    var id=row.insertCell(0);
+    var name1=row.insertCell(1);
+    var total=row.insertCell(2);
+    var booked=row.insertCell(3);
+    var vacancy=row.insertCell(4);
+    name1.innerHTML="Total";
+    total.innerHTML=tseat;
+    booked.innerHTML=bseat;
+    vacancy.innerHTML=tseat-bseat;
+
+</Script>
+</body>
+</html>

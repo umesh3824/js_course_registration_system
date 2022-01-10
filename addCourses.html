@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link  rel="stylesheet" type="text/css" href="css\addCss.css" >
+        <style>
+        
+        
+    </style>
+    </head>
+<body>
+    <center>
+           <table>
+               <form onsubmit="add()">
+                   <tr>
+                       <th colspan="2" class="thead">Enter Course Details</th>
+                   </tr>
+                   <tr>
+                       <td>Course Code:-</td>
+                       <td><input type="id" id="code" required readonly></th>
+                   </tr>
+                   <tr>
+                        <td>Course Name:-</td>
+                        <td><input type="text" id="name" required></th>
+                    </tr>
+                    <tr>
+                        <td>Course Description:-</td>
+                        <td><textarea cols="25" rows="3" id="d" required ></textarea></th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><input type="submit" value="Submit"></th>
+                    </tr>
+               </form>
+           </table>
+       
+</center>
+<script>
+    data=JSON.parse(localStorage.getItem("sub"));
+    document.getElementById("code").value="C00"+(data.length+1);
+    function add()
+    {
+        var subject={
+            code:"",
+            name:"",
+            cDescription:""
+        }
+        subject.code=document.getElementById("code").value;
+        subject.name=document.getElementById("name").value;
+        subject.cDescription=document.getElementById("d").value;
+        var data=[];
+        
+        data=JSON.parse(localStorage.getItem("sub"));
+        data.push(subject);
+        
+        window.localStorage.setItem("sub",JSON.stringify(data));
+        alert("Course is Successfully Added. ");
+
+    }
+</Script>
+</body>
+</html>

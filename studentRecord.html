@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link  rel="stylesheet" type="text/css" href="css\addCss.css" >
+        <style>
+        
+        
+    </style>
+    </head>
+<body>
+    <center>
+       
+            <div class="op" id="d1">
+                Courses Name<hr>
+                <input type="button" value="Total Student" onclick="Allstudent();"><p></p>
+            </div>
+            <div class="result">
+                <table id="tc" border="1">
+                    <tr>
+                        <th>Student Id</th>
+                        <th>Student Name</th>
+                        <th>Moblie No</th>
+                        <th>Seat No</th>
+                        <th>Delete</th>
+                    </tr>
+                </table>
+            </div>
+  
+</center>
+<script>
+  
+    var data=[];
+    data=JSON.parse(localStorage.getItem("sub"));
+    var table = document.getElementById("tc");
+    for(var Course of data)
+    {
+        var btn=document.createElement("BUTTON");
+        btn.innerHTML=Course.name;
+        btn.value=Course.code;
+        btn.style.width="95%";
+        btn.style.height="25px";
+        btn.style.border="solid 2px  rgb(190, 94, 190)";
+        btn.onclick=function(){
+           
+            var nrow=table.rows.length-1;
+            for(nrow;nrow>=1;nrow--)
+            {
+                table.deleteRow(nrow);
+            }
+            data=JSON.parse(localStorage.getItem("stud"));
+            for(var student of data)
+            {
+                    if(student.ccode==this.value)
+                    {
+                        var row=table.insertRow(1);
+                        var id=row.insertCell(0);
+                        var name1=row.insertCell(1);
+                        var mb=row.insertCell(2);
+                        var sno=row.insertCell(3);
+                        var deletebtn=row.insertCell(4);
+                        id.innerHTML=student.id;
+                        name1.innerHTML=student.name;
+                        mb.innerHTML=student.mbno;
+                        sno.innerHTML=student.seatno;
+                        deletebtn.innerHTML=`
+                        <button id="${student.id}"  onclick="deleteStudent(this.id)">Delete</button>
+                        `;
+                        
+                    }
+            }
+        }
+        document.getElementById("d1").appendChild(btn);
+        document.getElementById("d1").appendChild(document.createElement("p"));
+        
+    }
+
+function Allstudent()
+{
+    var data=[];
+    var nrow=table.rows.length-1;
+    for(nrow;nrow>=1;nrow--)
+    {
+        table.deleteRow(nrow);
+    }
+    data=JSON.parse(localStorage.getItem("stud"));
+            for(var student of data)
+            {
+                        var row1=table.insertRow(1);
+                        var id1=row1.insertCell(0);
+                        var name1=row1.insertCell(1);
+                        var mb1=row1.insertCell(2);
+                        var sno=row1.insertCell(3);
+                        var deletebtn=row1.insertCell(4);
+                        id1.innerHTML=student.id;
+                        name1.innerHTML=student.name;
+                        mb1.innerHTML=student.mbno;
+                        sno.innerHTML=student.seatno;
+                        deletebtn.innerHTML=`
+                        <button id="${student.id}"  onclick="deleteStudent(this.id)">Delete</button>
+                        `;
+            }
+}
+
+function deleteStudent(sid){
+    data=JSON.parse(localStorage.getItem("stud"));
+    for(var i=0;i<data.length;i++)
+    {
+        if(data[i].id==sid)
+        {
+            data.splice(i,1);
+            alert(" Student is sucessfully deleted !");
+            localStorage.setItem("stud",JSON.stringify(data));
+            document.location.reload(true);
+            break;
+        }
+    }
+}
+</Script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.headarea{
+    color:white;
+    width: 99.2%;
+    font-size:50px;
+    border: solid 2px white;
+    background-image: url("img/head.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.outer{
+    width:70%;
+    border: solid 5px rgb(216, 24, 216);
+    min-height: 600px;
+    background-image: url("img/body.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    }
+.home{
+        width:70%;
+        border: solid 5px rgb(216, 24, 216);
+        background-image: url("img/body.jpeg");
+        background-repeat: no-repeat;
+        background-size: 200%;
+        }
+iframe{
+    border: solid 2px white;
+}
+.menubar{
+    float:left;
+    width:20%;
+    background-color: rgba(40, 41, 43, 0.308);
+    border:solid 1.5px white;
+}
+.area{
+    float:right;
+    background-color:rgba(68, 105, 126, 0.432);
+    width:78%;
+    min-height: 250px;
+    border:solid 1.5px white;
+    }
+.mid{margin-top: 10px;
+
+}
+input{
+    width:95%;
+    padding: 5px;
+    border:solid 2px rgb(190, 94, 190);
+}
+select{
+    width:100%;
+}
+table{
+    border-collapse: collapse;
+}
+.op{
+    color:white;
+    width:30%;
+    float:left;
+    background-color: rgba(86, 88, 88, 0.212);
+    border:solid 1.5px white;
+}
+.result{
+    float:right;
+    width:65%;
+    border:solid 1.5px white;
+    min-height: 245px;
+}
+
+
+*{border-radius: 5px;
+}

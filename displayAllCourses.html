@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link  rel="stylesheet" type="text/css" href="addCss.css" >
+        <style>
+        
+        
+    </style>
+    </head>
+<body>
+    <center>
+        <div>
+                <table id="tc" border="1" style="border-collapse:collapse;">
+                    <tr>
+                        <th colspan="4">All Courses</th>
+                    </tr>
+                    <tr>
+                        <th>Corse Code</th>
+                        <th>Course Name</th>
+                        <th>Course Description</th>
+                        <th>Delete</th>
+                    </tr>
+                </table>
+        </div>
+</center>
+<script>
+  
+    var data=[];
+    data=JSON.parse(localStorage.getItem("sub"));
+    var table = document.getElementById("tc");
+    for(var Course of data)
+    {
+       
+        var row=table.insertRow(2);
+        var id=row.insertCell(0);
+        var name1=row.insertCell(1);
+        var description=row.insertCell(2);
+        var deletebtn=row.insertCell(3);
+        id.innerHTML=Course.code;
+        name1.innerHTML=Course.name;
+        description.innerHTML=Course.cDescription;
+
+        var btn=document.createElement("button");
+        btn.value="Delete";
+
+        deletebtn.innerHTML=`<input type='button' value='Delete' id='${Course.code}' onclick='deleteCourse(this.id)'>`;
+        
+    }
+    function deleteCourse(cid)
+    {
+        course=JSON.parse(localStorage.getItem("sub"));
+    for(var i=0;i<course.length;i++)
+    {
+        if(course[i].code==cid)
+        {
+            student=JSON.parse(localStorage.getItem("stud"));
+            for(var j=0;j<student.length;j++)
+            {
+                 if(student[j].ccode==cid)
+                {
+                    var v=student.splice(j,1);
+                    j--;
+                }
+            }
+            localStorage.setItem("stud",JSON.stringify(student));
+            course.splice(i,1); 
+            alert("Course are sucessfully deleted!");
+            localStorage.setItem("sub",JSON.stringify(course));
+            document.location.reload(true);
+            break;
+        }
+    }
+    }
+
+</Script>
+</body>
+</html>

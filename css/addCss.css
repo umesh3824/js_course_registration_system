@@ -1,0 +1,91 @@
+
+
+.outer{
+    width:60%;
+    border: solid 5px rgb(216, 24, 216);
+    min-height: 600px;
+    }
+iframe{
+    border: solid 2px white;
+}
+.menubar{
+    float:left;
+    width:20%;
+    background-color: rgba(40, 41, 43, 0.308);
+    border:solid 1.5px white;
+}
+hr{
+    color: white;
+
+}
+
+input{
+    width:95%;
+    padding: 5px;
+    border:solid 2px rgb(190, 94, 190);
+}
+select{
+    width:100%;
+    border:solid 2px rgb(190, 94, 190);
+}
+textarea{
+    border:solid 2px rgb(190, 94, 190);
+}
+table{
+    border-collapse: collapse;
+}
+
+.op{
+    color:white;
+    width:30%;
+    float:left;
+    background-color: rgba(86, 88, 88, 0.212);
+    border:solid 1.5px white;
+    font-size: 20px;
+}
+.result{
+    float:right;
+    width:65%;
+    min-height: 245px;
+}
+
+.boardouter{
+    padding:0px 100px 15px 100px;
+}
+.board{
+    background-color: black;
+    height: 40%;
+    color: white;
+    border:solid 2px white;
+}
+*{border-radius: 5px;
+}
+
+
+/*Seat Layout*/
+.seat{
+    width:50px;
+    height: 50px;
+}
+.outerseat{
+    padding: 5px;
+    width:55px;
+    height: 55px;
+}
+
+.thead{
+    background-color: rgba(0,0,0, 0.3);
+    color: white;
+    height: 10px;
+    width: 100%;
+}
+.tooltip{
+    background-color: rgba(0,0,0, 0.6);
+    color: white;
+    border: solid 2px white;
+}
+.seatdiv{
+    border:solid 1px rgb(190, 94, 190);
+    background-color: rgba(0,0,0, 0.2);
+    color:black;
+}

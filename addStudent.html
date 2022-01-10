@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link  rel="stylesheet" type="text/css" href="css\addCss.css" >
+        <style>
+          
+       
+    </style>
+    </head>
+<body onload="displaySeat()">
+    <center>
+           <table>
+               <form onsubmit="add()">
+                   <tr>
+                       <th colspan="2" class="thead"><div>Enter Student Info</div></th>
+                   </tr>
+                   <tr>
+                       <td>Student ID:-</td>
+                       <td><input type="text" id="sid" required readonly></th>
+                   </tr>
+                   <tr>
+                        <td>Student Name:-</td>
+                        <td><input type="text" id="sname" required></th>
+                    </tr>
+                    <tr>
+                        <td>Mobile Number:-</td>
+                        <td><input type="number" id="smb"  required></th>
+                    </tr>
+                    <tr>
+                        <td >Select Course:-</td>
+                        <td>
+                            <select id="course" onchange="displaySeat(this.value)"required>
+                                <option></option>
+                            </select>
+                        </td>
+                        <tr>
+                                <td>Confirm Seat No:-</td>
+                                <td><input type="text" id="ss" required readonly></th>
+                            </tr>  
+                    </tr>
+                    <tr>
+                    <tr>
+                            <table style="border: solid 1px purple;" id="seatTable">
+                        
+                                    <th colspan="7" class="thead"><div>Seat Arangement</div></td>
+                                </tr>
+                                <tr>
+                                 <th colspan="7" class="boardouter"><div class="board">Board</div></th>
+                             </tr>
+                             <tr>
+                                <th colspan="7"><center><p class="tooltip" id="ssname">Name :</p></center></th>
+                             </tr>
+                                <tr>
+                                    <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A1">A1</div></th>
+                                    <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A2">A2</div></th>
+                                    <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A3">A3</div></th>
+                                    <th class="outerseat"></th>
+                                    <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A4">A4</div></th>
+                                    <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A5">A5</div></th>
+                                    <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A6">A6</div></th>
+                                 </tr>
+                                 <tr>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A7">A7</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A8">A8</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A9">A9</div></th>
+                                     <th class="outerseat"></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A10">A10</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()"id="A11">A11</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()"id="A12">A12</div></th>
+                                  </tr>
+                                  <tr>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A13">A13</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A14">A14</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A15">A15</div></th>
+                                     <th class="outerseat"></th>
+                                     <th class="outerseat"><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat"  onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A16">A16</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A17">A17</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A18">A18</div></th>
+                                  </tr>
+                                  <tr>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A19">A19</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A20">A20</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A21">A21</div></th>
+                                     <th class="outerseat"></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A22">A22</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A23">A23</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A24">A24</div></th>
+                                  </tr>
+                                  <tr>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A25">A25</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A26">A26</div></th>
+                                     <th class="outerseat"><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat"  onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A27">A27</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A28">A28</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A29">A29</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A30">A30</div></th>
+                                     <th class="outerseat" ><div class="seatdiv"><img src="css/img/bchair.jpg" class="seat" onclick="bookseat(this)" onmouseover="tooltip(this)" onmouseout="cleartooltip()" id="A31">A31</div></th>
+                          </tr>
+                        </table>
+                    <tr>
+                        <th colspan="2"><input type="submit" value="Submit" style="width:50%;"></th>
+                    </tr>
+               </form>
+           </table>
+</center>
+<script>
+
+    studdata=JSON.parse(localStorage.getItem("stud"));
+    document.getElementById("sid").value="S00"+(studdata.length+1);
+
+    var data=[];
+    data=JSON.parse(localStorage.getItem("sub"));
+    var selectbox=document.getElementById("course");
+    var i=-1;
+    var v=[];
+    for(var s of data)
+    {
+        var op=document.createElement("option");
+        op.text=s.name;
+        op.value=s.code;
+        selectbox.add(op);
+    }
+    function add()
+    {
+        var student={
+            id:"",
+            name:"",
+            mbno:"",
+            ccode:"",
+            seatno:""
+        }
+        var sno=document.getElementById("ss").value;
+        if(sno)
+        {
+        student.id=document.getElementById("sid").value;
+        student.name=document.getElementById("sname").value;
+        student.mbno=document.getElementById("smb").value;
+        student.ccode=document.getElementById("course").value;
+        student.seatno=sno;
+        var data=[];
+        data=JSON.parse(localStorage.getItem("stud"));
+
+        data.push(student);
+        
+        window.localStorage.setItem("stud",JSON.stringify(data));
+        alert(student.name+"  you Have Successfully registered!!!");
+        }
+        else
+            alert("Plz Confirm Seat!!!");
+
+    }
+    function bookseat(img1)
+    {
+        var tf=document.getElementById("ss");
+        var ccode=document.getElementById("course").value;
+        data=JSON.parse(localStorage.getItem("stud"));
+        var flag=true;
+        for(var stud of data)
+        {
+            if(stud.seatno==img1.id && stud.ccode== ccode)
+            {
+                flag=false;
+                break;
+            }
+        }
+        if(flag)
+        {
+            if(!tf.value)
+            {
+                img1.src="css/img/rchair.jpg";
+                tf.value=img1.id;
+                alert("Seat No: "+img1.id);
+            }
+            else{
+            document.images.namedItem(tf.value).src="css/img/bchair.jpg";
+            tf.value=img1.id;
+            img1.src="css/img/rchair.jpg";
+            alert("Seat No: "+img1.id);
+            }
+        }
+        else
+        {
+            alert("This Seat was Alredy Booked Please Select Another Seat.");
+        }
+        
+    }
+    function displaySeat(c)
+    {
+        document.getElementById("ss").value="";
+        data=JSON.parse(localStorage.getItem("stud"));
+        for(var imgs of document.images)
+        {
+            imgs.src="css/img/bchair.jpg";
+        }
+        for(var stud of data)
+        {
+         
+            if(stud.ccode==c)
+            {
+           
+            var img1=document.images.namedItem(stud.seatno);
+            img1.src="css/img/rchair.jpg";
+        }
+        }
+    }
+
+    function tooltip(img1)
+    {
+        var c=document.getElementById("course").value;
+        document.getElementById("ssname").innerHTML="Name : Seat not book";
+        data=JSON.parse(localStorage.getItem("stud"));
+        for(var stud of data)
+        {
+         
+            if(stud.ccode==c)
+            { 
+                if(stud.seatno==img1.id)
+                document.getElementById("ssname").innerHTML="Name : "+stud.name;
+            }
+        }
+    }
+    function cleartooltip()
+    {
+        document.getElementById("ssname").innerHTML="Name :";
+    }
+    
+</Script>
+</body>
+</html>
